@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Give Your Symptoms</title>
+    <style>
+        body { font-family: cursive; }
+        .container { padding: 5rem; margin-top: -8rem; margin-left: 8rem; }
+        .split { height: 100%; width: 60%; position: fixed; z-index: 1; top: 0; overflow-x: hidden; padding-top: 1px; }
+        .left { left: 0; background-image: linear-gradient(#3692CE, #36C2CE); }
+        .right { right: 0; background-image: linear-gradient(#3692CE, #36C2CE); }
+        .centered1 { position: absolute; top: 50%; left: 30%; transform: translate(-50%, -50%); text-align: center; }
+        .centered { position: absolute; top: 40%; left: 20%; transform: translate(-30%, -30%); text-align: center; }
+        input { font-size: 16px; }
+        .symptom-item { margin: 5px 0; }
+        .delete-button { cursor: pointer; color: red; margin-left: 10px; }
+    </style>
+</head>
+<body>
+    <div class="split left">
+        <div class="centered1">
+            <h1>Symptoms</h1>
+            <div class="search-bar">
+                <input id="search" type="search" placeholder="Search symptoms" list="search-suggestions" autocomplete="off"/>
+                <datalist id="search-suggestions">
+                    <option value="itching">
+                    <option value="skin_rash">
+                    <option value="nodal_skin_eruptions">
+                    <option value="dischromic_patches">
+                    <option value="continuous_sneezing">
+                    <option value="shivering">
+                    <option value="chills">
+                    <option value="watering_from_eyes">
+                    <option value="stomach_pain">
+                    <option value="ulcers_on_tongue">
+                    <option value="vomiting">
+                    <option value="cough">
+                    <option value="chest_pain">
+                    <option value="yellowish_skin">
+                    <option value="nausea">
+                    <option value="loss_of_appetite">
+                    <option value="abdominal_pain">
+                    <option value="yellowing_of_eyes">
+                    <option value="burning_micturition">
+                    <option value="spotting_urination">
+                    <option value="passage_of_gases">
+                    <option value="internal_itching">
+                    <option value="muscle_wasting">
+                    <option value="patches_in_throat">
+                    <option value="high_fever">
+                    <option value="extra_marital_contacts">
+                    <option value="fatigue">
+                    <option value="weight_loss">
+                    <option value="restlessness">
+                    <option value="lethargy">
+                    <option value="irregular_sugar_level">
+                    <option value="blurred_and_distorted_vision">
+                    <option value="obesity">
+                    <option value="excessive_hunger">
+                    <option value="increased_appetite">
+                    <option value="polyuria">
+                    <option value="sunken_eyes">
+                    <option value="dehydration">
+                    <option value="diarrhoea">
+                    <option value="breathlessness">
+                    <option value="family_history">
+                    <option value="mucoid_sputum">
+                    <option value="headache">
+                    <option value="dizziness">
+                    <option value="loss_of_balance">
+                    <option value="lack_of_concentration">
+                    <option value="acidity">
+                    <option value="indigestion">
+                    <option value="stiff_neck">
+                    <option value="depression">
+                    <option value="irritability">
+                    <option value="visual_disturbances">
+                    <option value="back_pain">
+                    <option value="weakness_in_limbs">
+                    <option value="neck_pain">
+                    <option value="constipation">
+                    <option value="movement_stiffness">
+                    <option value="bruising">
+                    <option value="abnormal_menstruation">
+                    <option value="scurring">
+                    <option value="inflammatory_nails">
+                    <option value="coma">
+                    <option value="knee_pain">
+                    <option value="throat_irritation">
+                    <option value="red_spots_over_body">
+                    <option value="belly_pain">
+                    <option value="brittle_nails">
+                    <option value="acute_liver_failure">
+                    <option value="anxiety">
+                    <option value="altered_sensorium">
+                    <option value="distention_of_abdomen">
+                    <option value="pus_filled_pimples">
+                    <option value="swollen_blood_vessels">
+                    <option value="weakness_of_one_body_side">
+                    <option value="swollen_legs">
+                    <option value="small_dents_in_nails">
+                    <option value="phlegm">
+                    <option value="runny_nose">
+                    <option value="irritation_in_anus">
+                    <option value="sweating">
+                    <option value="swelling_joints">
+                    <option value="redness_of_eyes">
+                    <option value="toxic_look_(typhos)">
+                    <option value="silver_like_dusting">
+                    <option value="fluid_overload">
+                    <option value="rusty_sputum">
+                    <option value="continuous_feel_of_urine">
+                    <option value="loss_of_smell">
+                    <option value="drying_and_tingling_lips">
+                    <option value="cold_hands_and_feets">
+                    <option value="enlarged_thyroid">
+                    <option value="palpitations">
+                    <option value="swelled_lymph_nodes">
+                    <option value="unsteadiness">
+                    <option value="painful_walking">
+                    <option value="prominent_veins_on_calf">
+                    <option value="slurred_speech">
+                    <option value="mild_fever">
+                    <option value="swollen_extremeties">
+                    <option value="red_sore_around_nose">
+                    <option value="sinus_pressure">
+                    <option value="stomach_bleeding">
+                    <option value="swelling_of_stomach">
+                    <option value="cramps">
+                    <option value="bloody_stool">
+                    <option value="receiving_unsterile_injections">
+                    <option value="congestion">
+                    <option value="blackheads">
+                    <option value="pain_in_anal_region">
+                    <option value="blood_in_sputum">
+                    <option value="mood_swings">
+                    <option value="fast_heart_rate">
+                    <option value="foul_smell_of_urine">
+                    <option value="yellow_crust_ooze">
+                    <option value="history_of_alcohol_consumption">
+                    <option value="skin_peeling">
+                    <option value="blister">
+                </datalist>
+                <button onclick="addSymptom()">Add Symptom</button>
+            </div>
+            <div id="selectedSymptoms"></div><br>
+            <button onclick="submitSymptoms()">Submit Symptoms</button>
+        </div>
+    </div>
+    <div class="split right">
+        <div class="centered">
+            <div id="result" style="background-color:white; margin-left:10rem; padding:8rem; width:300px; height:200px; overflow:auto;">
+                Disease Prediction
+            </div><br><br>
+        </div>
+    </div>
+
+    <script>
+        var selectedSymptoms = [];
+
+        function addSymptom() {
+            var searchInput = document.getElementById('search');
+            var inputValue = searchInput.value.trim();
+
+            if (inputValue === '') {
+                alert('Please enter a symptom.');
+                return;
+            }
+
+            if (selectedSymptoms.includes(inputValue)) {
+                alert('Symptom already added.');
+                return;
+            }
+
+            selectedSymptoms.push(inputValue);
+            displaySymptoms();
+            searchInput.value = '';
+        }
+
+        function displaySymptoms() {
+            var symptomContainer = document.getElementById('selectedSymptoms');
+            symptomContainer.innerHTML = '';
+
+            selectedSymptoms.forEach(function(symptom) {
+                var symptomItem = document.createElement('div');
+                symptomItem.classList.add('symptom-item');
+
+                var symptomText = document.createElement('span');
+                symptomText.textContent = symptom;
+                symptomText.style.marginRight = '10px';
+
+                symptomItem.appendChild(symptomText);
+
+                var deleteButton = document.createElement('span');
+                deleteButton.classList.add('delete-button');
+                deleteButton.innerHTML = '&#10006;'; // Cross mark for delete
+                deleteButton.addEventListener('click', function() {
+                    deleteSymptom(symptom);
+                });
+
+                symptomItem.appendChild(deleteButton);
+                symptomContainer.appendChild(symptomItem);
+            });
+        }
+
+        function deleteSymptom(symptom) {
+            var index = selectedSymptoms.indexOf(symptom);
+            if (index !== -1) {
+                selectedSymptoms.splice(index, 1);
+                displaySymptoms();
+            }
+        }
+
+        function submitSymptoms() {
+            if (selectedSymptoms.length === 0) {
+                alert('Please add at least one symptom before submitting.');
+                return;
+            }
+
+            // Placeholder for the prediction logic
+            var predictionResult = "Your disease prediction result based on symptoms: " + selectedSymptoms.join(', ');
+            document.getElementById('result').innerText = predictionResult;
+
+            // Optionally clear the selected symptoms after submission
+            // selectedSymptoms = [];
+            // displaySymptoms();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Patient Details
+    </title>
+    <style>
+        .container{
+            padding: 5rem;
+            margin-top: -10rem;
+            margin-left: 8rem;
+        }
+        td{
+            font-size: 25px;
+            padding: 1rem;
+            font-family : cursive;
+        }
+        input {
+            font-size: 20px;
+        }
+        .split {
+            height: 100%;
+            width: 50%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            padding-top: 1px;
+        }
+        .left {
+            left: 0;
+            margin-top : -4rem;
+        }
+        .right {
+            right: 0;
+        }
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        input:focus
+        {
+            background-color:rgb(123, 205, 232);
+            color : white;
+        }
+    </style>
+
+</head>
+<body style="background-image:linear-gradient(to right,aqua,blue)">
+    <div class="split left">
+        <div class="centered">
+            <br><br><br><br><br>
+            <h1 style="color:white;text-shadow:2px 3px 5px blue">Enter Details</h1>
+            <br>
+    <form>
+            <table>
+                    <tr>
+                        <td><label>Name </label></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Age </label></td>
+                        <td><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Place </label></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Pincode </label></td>
+                        <td><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td><label>State </label></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Contact </label></td>
+                        <td><input type="number"></td>
+                    </tr>
+                </table>
+            </form><br><br>
+            <button onclick="window.location.href = '/prediction';" style="padding:0.8rem;font-family:monospace;color:white;background-color: rgba(17, 119, 235, 0.929);border-color: white;" >Submit</button>
+
+        </div>
+    </div>
+    <div class="split right">
+        <div class="centered">
+<!--            <img src="/static/typing1.jpeg" width=1100 height=800>-->
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url("/static/b1.jpg");
+            background-position: center center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .signupbox {
+            height: 520px;
+            width: 400px;
+            /* background-color: ; */
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 55%;
+            left: 70%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(6, 247, 34, 0.1);
+            box-shadow: 0 0 40px rgba(31, 27, 65, 0.6);
+            padding: 35px 35px;
+        }
+
+        form * {
+            font-family: 'Brush Script', 'Brush Script';
+            font-weight: 900;
+            /* color: rgb(224, 24, 201); */
+            color: #4B0082;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+
+        form h3 {
+            font-size: 35px;
+            font-weight: bold;
+            line-height: 42px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 25px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        input {
+            display: block;
+            height: 50px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.81);
+            border-radius: 3px;
+            padding: 0 10px;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        ::placeholder {
+            color: rgb(22, 21, 21);
+        }
+
+        button {
+            margin-top: 20px;
+            width: 70%;
+            background-color: #4B0082;
+            color: white;
+            margin-left: 3rem;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            /* position: fixed; */
+
+        }
+
+        p {
+            color: black
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Brush+Script&display=swap">
+
+</head>
+
+<body>
+<center><h1 style="font-size:39px;font-family:cursive;font-weight:bold;text-shadow:2px 3px 4px gray">Health Link Horizon</h1></center>
+    <script>
+        function validateForm() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    var reenterpassword = document.getElementById('reenterpassword').value;
+
+    if (username === '' || password === '' || reenterpassword === '') {
+        alert('Please fill in all fields before creating an account.');
+    } else if (!isValidEmail(username)) {
+        alert('Please enter a valid email address.');
+    } else {
+        checkPassword();
+    }
+}
+
+function isValidEmail(email) {
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function checkPassword() {
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("reenterpassword").value;
+
+    if (password === confirmPassword) {
+      alert("Successfully created account!");
+    } else {
+      alert("Passwords do not match. Please try again.");
+    }
+  }
+    </script>
+    <div class="signupbox">
+        <div class="signupdetails">
+            <form action="/patientDetails" method="post">
+                <h3>SIGN UP</h3>
+
+                <label for="username">E-MAIL</label>
+                <input type="text" placeholder="Email" id="username">
+
+                <label for="password">Create Password</label>
+                <input type="password" placeholder="Password" id="password">
+
+                <label for="reenterpassword">Re-enter Password</label>
+                <input type="password" placeholder="Re-enter password" id="reenterpassword">
+                <center>
+                    <button onclick="validateForm()">CREATE ACCOUNT</button><br><br>
+                </center>
+                <p>Already have an account?&nbsp;<a href="/login">LOGIN</a></p>
+                <a href="tel: +916300687673">Emergency call</a>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
